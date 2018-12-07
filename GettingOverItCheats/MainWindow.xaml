@@ -1,0 +1,104 @@
+﻿<Window x:Class="GettingOverItCheats.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Getting over it cheat" Height="369.631" Width="366.533" Background="#FF292828" FontFamily="Tahoma" Foreground="{StaticResource ColorGlobalForeground}"
+        Style="{StaticResource Window }"
+        WindowStartupLocation="CenterScreen" BorderBrush="#FF020202" BorderThickness="1"
+        
+        >
+    <Grid>
+        <!-- grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- window -->
+        <Rectangle Grid.Row="0" Grid.Column="0" Style="{StaticResource TitleBar}" x:Name="TitleBar"
+                   MouseLeftButtonDown="TitleBar_OnMouseLeftButtonDown" Fill="Black"/>
+        <Image Grid.Row="0" Grid.Column="0" Source="img/mug-icon.png" Style="{StaticResource TitleBaricon}" MouseLeftButtonDown="TitleBar_OnMouseLeftButtonDown"/>
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Style="{StaticResource TitleBarText}"
+                   Text="Just get over it! - GOI cheat" MouseLeftButtonDown="TitleBar_OnMouseLeftButtonDown" />
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" 
+                    VerticalAlignment="top" HorizontalAlignment="Right"
+                    Margin="0 5">
+            <Button Style="{StaticResource TitleBarButton}" Content="-"
+                    x:Name="TitleBarButtonMinimize" 
+                    Click="TitleBarButtonMinimize_OnClick"/>
+            <Button Style="{StaticResource TitleBarCloseBtn}" Content="X"
+                    x:Name="TitleBarButtonClose" 
+                    Click="TitleBarButtonClose_OnClick"/>
+        </StackPanel>
+
+        <!-- application -->
+        <TextBox Grid.Row="1" x:Name="TextBoxGameLocation" HorizontalAlignment="Left" Height="22" Margin="103,191.6,0,0" TextWrapping="NoWrap" 
+                 Text="D:\Steam\steamapps\common\Getting Over It\GettingOverIt.exe" VerticalAlignment="Top" Width="190" 
+                 Background="{StaticResource ColorControlBackground}" 
+                 Foreground="{StaticResource ColorLabelForeground}" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <Label Grid.Row="1" x:Name="Label" Content="Game location:" HorizontalAlignment="Left" Margin="9,187.6,0,0" VerticalAlignment="Top" 
+               Foreground="{StaticResource ColorLabelForeground}"/>
+        <Button Grid.Row="1" x:Name="ButtonBrowseToGameLocation" Content="..." HorizontalAlignment="Left" Margin="299,191.6,0,0" VerticalAlignment="Top" Width="49" Height="22" 
+                Style="{StaticResource Button}" Click="ButtonBrowseToGameLocation_Click"/>
+        <Button Grid.Row="1" x:Name="ButtonLoadSave" Content="Load" HorizontalAlignment="Left" Margin="17,141.6,0,0" VerticalAlignment="Top" Width="75" 
+                Style="{StaticResource Button}" Height="21" Click="ButtonLoadSave_Click"/>
+        <ListBox Grid.Row="1" x:Name="ListBoxSavesList" HorizontalAlignment="Left" Height="74" Margin="17,53.6,0,0" VerticalAlignment="Top" Width="331" 
+                 Background="{StaticResource ColorControlBackground}" BorderBrush="{x:Null}"
+                 Foreground="{StaticResource ColorLabelForeground}"/>
+        <Label Grid.Row="1" x:Name="Label1" Content="Saves:" HorizontalAlignment="Left" Margin="19,16.6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,0.258" 
+               Foreground="{StaticResource ColorLabelForeground}"/>
+        <Button Grid.Row="1" x:Name="ButtonNewSave" Content="New" HorizontalAlignment="Left" Margin="181,20.6,0,0" VerticalAlignment="Top" Width="75" 
+                Style="{StaticResource Button}" Height="21" Click="ButtonNewSave_Click"/>
+        <Label Grid.Row="1" x:Name="Label2" Content="Gravity:" HorizontalAlignment="Left" Margin="17,230.6,0,0" VerticalAlignment="Top" 
+               Foreground="{StaticResource ColorLabelForeground}"/>
+        <Label Grid.Row="1" x:Name="LabelGravityDescription" HorizontalAlignment="Left" Margin="83,259.6,0,0" VerticalAlignment="Top" 
+               Foreground="{StaticResource ColorLabelForeground}" FontSize="12" Height="25"/>
+        <ComboBox Grid.Row="1" x:Name="ComboBoxGravity" HorizontalAlignment="Left" Margin="83,232.6,0,0" VerticalAlignment="Top" Width="147" 
+                  Foreground="{StaticResource ColorLabelForeground}" Template="{DynamicResource ComboBox}" SelectionChanged="ComboBoxGravity_SelectionChanged">
+            <ComboBoxItem Content="Earth" IsSelected="True"/>
+            <ComboBoxItem Content="Moon"/>
+            <ComboBoxItem Content="Reverse"/>
+        </ComboBox>
+        <Button Grid.Row="1" x:Name="ButtonApplyGravityHack" Content="Apply" HorizontalAlignment="Left" Margin="244,232.6,0,0" VerticalAlignment="Top" Width="82" Height="22" 
+                Style="{StaticResource Button}" Click="ButtonApplyGravityHack_Click"/>
+
+        <Button Grid.Row="1" x:Name="ButtonRemoveSave" Content="Remove" HorizontalAlignment="Left" Margin="273,141.6,0,0" VerticalAlignment="Top" Width="75" 
+                Style="{StaticResource Button}" Height="21" Click="ButtonRemoveSave_Click"/>
+        <TextBlock Foreground="{StaticResource ColorLabelForeground}" HorizontalAlignment="Left" Margin="18,289.6,0,0" Grid.Row="1" TextWrapping="NoWrap" Text="Number of wins: " VerticalAlignment="Top"/>
+
+        <Button Grid.Row="1" x:Name="ButtonChangeNumberOfWins" Content="Change" HorizontalAlignment="Left" Margin="203,289.6,0,0" VerticalAlignment="Top" Width="82" Height="22" 
+            Style="{StaticResource Button}" Click="ButtonChangeNumberOfWins_Click"/>
+
+        <!-- application -> numericupdown -->
+        <Grid Margin="109,285.6,163.8,26" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0" x:Name="TextBoxNumberOfWins" Background="{StaticResource ColorControlBackground}" 
+                     HorizontalAlignment="Right" TextWrapping="NoWrap" Text="0" Width="71" 
+                     Foreground="{StaticResource ColorLabelForeground}" TextChanged="TextBoxNumberOfWins_TextChanged" Margin="0,4,0.4,3"/>
+            <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center">
+                <Button Width="14" Style="{StaticResource Button}" x:Name="ValueUpButton" HorizontalAlignment="Left" Height="12" Click="ValueUpButton_Click">
+                    <Image Source="img/arrow-up.png"/>
+                </Button>
+                <Button Width="14" Style="{StaticResource Button}" x:Name="ValueDownButton" HorizontalAlignment="Left" Height="12" Click="ValueDownButton_Click">
+                    <Image Source="img/arrow-down.png"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <TextBox Grid.Column="0" x:Name="TextBoxSaveName" Background="{StaticResource ColorControlBackground}" 
+            HorizontalAlignment="Right" TextWrapping="NoWrap" Text="Save" Width="105" 
+            Foreground="{StaticResource ColorLabelForeground}" Margin="0,20.6,195.8,296" Grid.Row="1"/>
+        <!--<Button Grid.Row="1" x:Name="ButtonEditSave" Content="Edit" HorizontalAlignment="Left" Margin="193,141.6,0,0" VerticalAlignment="Top" Width="75" 
+            Style="{StaticResource Button}" Height="21" Click="ButtonEditSave_Click"/>-->
+
+    </Grid>
+</Window>

@@ -1,0 +1,61 @@
+﻿<Window x:Class="GettingOverItCheats.WindowEditSave"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GettingOverItCheats"
+        mc:Ignorable="d"
+        Title="WindowEditSave" Height="172" Width="217.333"
+        Style="{StaticResource Window2}"
+        Foreground="{StaticResource ColorGlobalForeground}" Background="#FF292828"
+        WindowStartupLocation="CenterScreen"
+        BorderBrush="Black" BorderThickness="2"
+        Loaded="WindowEditSave_OnLoaded"
+        >
+    <Grid Margin="0,0,-0.4,0">
+        <!-- grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- window -->
+        <Rectangle Grid.Row="0" Grid.Column="0" Style="{StaticResource TitleBar}" x:Name="TitleBar"
+                   Fill="Black"/>
+        <Image Grid.Row="0" Grid.Column="0" Source="img/mug-icon.png" Style="{StaticResource TitleBaricon}"/>
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Style="{StaticResource TitleBarText}"
+                   Text="Edit save" />
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" 
+                    VerticalAlignment="top" HorizontalAlignment="Right"
+                    Margin="0 5">
+            <Button Style="{StaticResource TitleBarCloseBtn}" Content="X"
+                    x:Name="TitleBarButtonClose" RenderTransformOrigin="0.504,0.5" Click="TitleBarButtonClose_Click" 
+                    />
+        </StackPanel>
+
+        <!-- application -->
+        <Label Grid.Row="1" x:Name="Label1" Content="Time played:" HorizontalAlignment="Left" Margin="10,9.6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,0.258" 
+            Foreground="{StaticResource ColorLabelForeground}"/>
+
+        <Button Grid.Row="1" x:Name="ButtonModifySave" Content="Modify" HorizontalAlignment="Left" Margin="72,106.6,0,0" VerticalAlignment="Top" Width="75" 
+                Style="{StaticResource Button}" Height="21" Click="ButtonModifySave_Click"/>
+        <Label Grid.Row="1" x:Name="Label2" Content="Game version:" HorizontalAlignment="Left" Margin="10,34.6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,0.258" 
+            Foreground="{StaticResource ColorLabelForeground}"/>
+        <Label Grid.Row="1" x:Name="Label3" Content="Speedrun:" HorizontalAlignment="Left" Margin="10,61.6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,0.258" 
+            Foreground="{StaticResource ColorLabelForeground}"/>
+        <TextBox Grid.Column="0" x:Name="TextBoxTimePlayed" Background="{StaticResource ColorControlBackground}" 
+            HorizontalAlignment="Right" TextWrapping="NoWrap" Text="" Width="105" 
+            Foreground="{StaticResource ColorLabelForeground}" Margin="0,15.6,15.6,106" Grid.Row="1"/>
+        <TextBox Grid.Column="0" x:Name="TextBoxGameVersion" Background="{StaticResource ColorControlBackground}" 
+            HorizontalAlignment="Right" TextWrapping="NoWrap" Text="" Width="105" 
+            Foreground="{StaticResource ColorLabelForeground}" Margin="0,40.6,15.6,81" Grid.Row="1"/>
+        <TextBox Grid.Column="0" x:Name="TextBoxSpeedRun" Background="{StaticResource ColorControlBackground}" 
+            HorizontalAlignment="Right" TextWrapping="NoWrap" Text="" Width="105" 
+            Foreground="{StaticResource ColorLabelForeground}" Margin="0,67.6,15.6,54" Grid.Row="1"/>
+
+    </Grid>
+</Window>
